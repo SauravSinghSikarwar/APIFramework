@@ -13,13 +13,13 @@ Examples:
 	|AAhouse |  English |World cross center|
 #	|BBhouse | Spanish  |Sea cross center  |
 
-@DeletePlace @Regression
-Scenario: Verify if Delete Place functionality is working
+#@DeletePlace @Regression
+#Scenario: Verify if Delete Place functionality is working
 
-	Given DeletePlace Payload
-	When user calls "deletePlaceAPI" with "POST" http request
-	Then the API call got success with status code 200
-	And "status" in response body is "OK"
+	#Given DeletePlace Payload
+	#When user calls "deletePlaceAPI" with "POST" http request
+	#Then the API call got success with status code 200
+	#And "status" in response body is "OK"
 	 
 
 
