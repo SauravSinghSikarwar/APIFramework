@@ -5,6 +5,7 @@ import static io.restassured.RestAssured.given;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import static org.junit.Assert.*;
 import io.cucumber.java.en.Given;
@@ -21,6 +22,7 @@ import io.restassured.specification.ResponseSpecification;
 import pojo.AddPlace;
 import pojo.Location;
 import resources.APIResources;
+import resources.ExcelData;
 import resources.TestDataBuild;
 import resources.Utils;
 
@@ -35,9 +37,22 @@ public class StepDefination extends Utils {
 @Given("Add Place Payload with {string}  {string} {string}")
 public void add_Place_Payload_with(String name, String language, String address) throws IOException {
 	    // Write code here that turns the phrase above into concrete actions
+	     
+	     
+	     
+/*	     ***************Excel Data Usage Into JSON*********************
+	     
+	     ExcelData excel = new ExcelData();
+         ArrayList data = excel.getData("TC3", "Sheet1");     
 	
-		 
-		 res=given().spec(requestSpecification())
+		 HashMap<String, Object> jsonAsMap = new HashMap<String, Object>();
+		 jsonAsMap.put("name", data.get(1));
+		 jsonAsMap.put("isbn", data.get(2));
+		 jsonAsMap.put("aisle", data.get(2));
+		.body(jsonAsMap);
+*/		
+	
+	     res=given().spec(requestSpecification())
 		.body(data.addPlacePayLoad(name,language,address));
 	}
 
